@@ -1,0 +1,28 @@
+<div id="<%= dom_id book %>">
+
+
+  <p>
+    <strong>Title:</strong>
+    <%= book.title %>
+  </p>
+
+  <p>
+    <strong>Category:</strong>
+    <%= link_to book.category.name, book.category %>
+  </p>
+  <p>
+    <strong>Author:</strong>
+    <%= link_to book.author.name, book.author %>
+  </p>
+  <p>
+    <strong>Opis:</strong>
+    <%= book.body %>
+  </p>
+  <p>
+    <strong>Wydawnictwa:</strong>
+    <% book.publishers.each do |g| %>
+      <br><%= link_to g.name, publisher_path(g) %>
+    <% end %>
+  </p>
+
+</div>
